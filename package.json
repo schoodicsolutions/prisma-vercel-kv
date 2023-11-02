@@ -19,5 +19,9 @@
   },
   "dependencies": {
     "typescript": "^5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schoodicsolutions/prisma-vercel-kv"
   }
 }
