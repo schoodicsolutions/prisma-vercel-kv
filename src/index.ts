@@ -33,7 +33,7 @@ const EXPIRY_TIME = USER_TTL ?? 3600; // 1 hour by default
 const DEFAULT_MODEL_KEY = '$$NO_MODEL$$';
 
 const generateCacheKey = (
-  model: string,
+  model: string | undefined,
   operation: string,
   args: any,
 ): string => {
@@ -78,7 +78,7 @@ const PrismaVercelKV = Prisma.defineExtension({
         return query(args);
       }
       if (readOps.has(operation as Operation)) {
-        const key = generateCacheKey(model ?? 'RAW', operation, args);
+        const key = generateCacheKey(model, operation, args);
         return getFromCacheOrQuery(key, query, args);
       }
       return query(args);

@@ -1,6 +1,6 @@
 {
   "name": "prisma-vercel-kv",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An extension for Prisma that caches query results to Vercel KV",
   "files": [
     "/dist"
