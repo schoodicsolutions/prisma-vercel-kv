@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "prisma-vercel-kv",
+  "version": "1.0.0",
+  "description": "An extension for Prisma that caches query results to Vercel KV",
+  "files": [
+    "/dist"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "author": "Schoodic Solutions",
+  "license": "MIT",
+  "devDependencies": {
+    "@prisma/client": "^5.5.2",
+    "@types/node": "^20.8.10",
+    "@vercel/kv": "^0.2.4"
+  },
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
