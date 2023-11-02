@@ -17,7 +17,7 @@ Install prisma-vercel-kv by running the following command in your project:
 npm install prisma-vercel-kv
 ```
 
-Ensure that you have Prisma Client set up in your project, as prisma-vercel-kv is designed to extend its functionality.
+Ensure that you have Prisma Client set up in your project, as prisma-vercel-kv is designed to extend its functionality. Also make sure you have Vercel KV installed, and the appropriate .env vars set up in your project for authentication.
 
 ## Usage
 
@@ -58,7 +58,7 @@ To set the Time-To-Live (TTL) for cache entries, define `PRISMA_VERCEL_KV_TTL` i
 
 ```
 # .env
-PRISMA_VERCEL_KV_TTL=3600 # TTL in seconds, e.g., 3600 for 1 hour
+PRISMA_VERCEL_KV_TTL=86400 # TTL in seconds, e.g., 86400 for 24 hours
 ```
 
 Adjust the TTL according to your application's caching requirements. It is set to 3600 by default.
@@ -68,12 +68,6 @@ Adjust the TTL according to your application's caching requirements. It is set t
 - Assumes JSON-compatible serialization of cached data.
 - Does not support nested operations within the `query` extension type.
 - Broad cache invalidation may affect more cache entries than necessary for certain types of write operations.
-
-## Best Practices
-
-- Optimal for applications with a high ratio of read operations to write operations.
-- Keep an eye on your Vercel KV usage to manage costs and maintain performance.
-- Regularly revisit your caching strategy to ensure it continues to meet your application's needs.
 
 ## Contributing
 
@@ -85,4 +79,4 @@ prisma-vercel-kv is available under the MIT License. Refer to the LICENSE file i
 
 ---
 
-For comprehensive guidance on Prisma Client extensions, consult the [Prisma documentation](https://www.prisma.io/docs/concepts/components/prisma-client/extensions).
+For comprehensive guidance on Prisma Client extensions, consult the [Prisma documentation](https://www.prisma.io/docs/concepts/components/prisma-client/client-extensions).
